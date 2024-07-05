@@ -193,138 +193,31 @@
               </el-radio>
             </el-radio-group>
           </el-form-item>
-
-
-
-
-
-
           <el-form-item label="*确定项目类型">
             <el-radio-group v-model="sys_xmlx">
               <el-radio label="1">非云平台</el-radio>
               <el-radio label="2">云平台过密评</el-radio>
               <el-radio label="3">云租户过密评</el-radio>
-              <!-- <el-radio label="1">单系统模式:建设的密码资源服务于单个信息系统</el-radio>
-              <br>
-              <el-radio label="2">多系统模式:共享建设的密码资源,同时支撑多个信息系统,一般一个主体建设;</el-radio>
-              <br>
-              <el-radio label="3">云租户模式:为云平台建设云密码资源池,为云租户系统动态分配密码资源;</el-radio>
-              <br>
-              <el-radio label="4">云租户+云平台模式:为云平台建设云密码资源池,为云租户系统动态分配密码资源，同时为云平台建设密码资源，保障云平台自身过密评。</el-radio> -->
             </el-radio-group>
           </el-form-item>
-          <!-- <el-row>
-            <el-col :span="5">
-              <el-form-item label="*系统架构">
-                <el-radio-group v-model="sys_xtjg">
-                  <el-radio label="1">C/S架构</el-radio>
-                  <br>
-                  <el-radio label="2">B/S架构</el-radio>
-                </el-radio-group>
-              </el-form-item>
-            </el-col>
-          </el-row>
-          <br>
-          <br> -->
           <el-row>
-            <!-- <el-col :span="5">
-              <el-form-item label="*系统建设">
-                <el-radio-group v-model="sys_xtjs">
-                  <el-radio label="1">未建设</el-radio>
-                  <br>
-                  <el-radio label="2">正在建设</el-radio>
-                  <br>
-                  <el-radio label="3">已上线</el-radio>
-                </el-radio-group>
-              </el-form-item>
-            </el-col> -->
             <el-col :span="5">
               <el-form-item label="*等保级别">
                 <el-radio-group v-model="sys_dbjb">
                   <el-radio label="1">二级</el-radio>
                   <el-radio label="2">三级</el-radio>
-                  <!-- <br>
-                  <el-radio label="3">四级</el-radio> -->
                 </el-radio-group>
               </el-form-item>
             </el-col>
-            <!-- <el-col :span="5">
-              <el-form-item label="*密评首次">
-                <el-radio-group v-model="sys_mpsc">
-                  <el-radio label="1">首次</el-radio>
-                  <br>
-                  <el-radio label="2">做过,未通过</el-radio>
-                  <br>
-                  <el-radio label="3">做过,已通过</el-radio>
-                  <br>
-                </el-radio-group>
-              </el-form-item>
-            </el-col> -->
-            <!-- <el-col :span="5">
-              <el-form-item label="*密码制度">
-                <el-radio-group v-model="sys_mmzd">
-                  <el-radio label="1">未建设</el-radio>
-                  <br>
-                  <el-radio label="2">已建设</el-radio>
+            <el-col :span="10">
+              <el-form-item label="*密码支撑平台">
+                <el-radio-group v-model="sys_mmzcpt">
+                  <el-radio label="1">密码应用中间件方式</el-radio>
+                  <el-radio label="2">密码设备方式</el-radio>
                 </el-radio-group>
               </el-form-item>
             </el-col>
           </el-row>
-          <br>
-          <br>
-          <el-row>
-            <el-col :span="5">
-              <el-form-item label="*云上部署">
-                <el-radio-group v-model="sys_ysbs" @change="changeRZYSbyYSBS">
-                  <el-radio label="1">在云上</el-radio>
-                  <el-radio label="2">不在云上</el-radio>
-                </el-radio-group>
-              </el-form-item>
-            </el-col> -->
-
-            <!-- <el-col :span="5">
-              <el-form-item label="若在云上">
-                <el-radio-group v-model="sys_rzys" :disabled="sys_rzys_disableb">
-                  <el-radio label="1">云平台已过密评</el-radio>
-                  <el-radio label="2">云平台尚未过密评</el-radio>
-                </el-radio-group>
-              </el-form-item>
-            </el-col>
-
-            <el-col :span="5">
-              <el-form-item label="*服务端">
-                <el-radio-group v-model="mpjb_fwd">
-                  <el-radio label="1">HTTPS</el-radio>
-                  <br>
-                  <el-radio label="2">HTTP</el-radio>
-                </el-radio-group>
-              </el-form-item>
-            </el-col>
-            <el-col :span="5">
-              <el-form-item label="*移动端">
-                <el-checkbox-group v-model="mpjb_ydd">
-                  <el-checkbox label="1">无</el-checkbox>
-                  <el-checkbox label="2">手机APP</el-checkbox>
-                  <el-checkbox label="3">微信小程序</el-checkbox>
-                </el-checkbox-group>
-              </el-form-item>
-            </el-col> -->
-          </el-row>
-          <!-- <el-form-item label="等保定级时间">
-            <el-input v-model="sys_dbsj" placeholder="请输入完成等保定级时间" style="width: 20%"></el-input>
-          </el-form-item>
-          <el-form-item label="定级预备编号">
-            <el-input v-model="sys_djbh" placeholder="请输入网络保护等级的定级预备编号" style="width: 20%"></el-input>
-          </el-form-item>
-          <el-form-item label="测评机构">
-            <el-input v-model="sys_cpjg" placeholder="请输入等保测评机构" style="width: 20%"></el-input>
-          </el-form-item>
-          <el-form-item label="单位地址">
-            <el-input v-model="sys_dwdz" placeholder="请输入单位地址" style="width: 20%"></el-input>
-          </el-form-item>
-          <el-form-item label="上线时间">
-            <el-input v-model="sys_sxsj" placeholder="请输入系统上线时间" style="width: 20%"></el-input>
-          </el-form-item> -->
           <br>
           <el-form-item
             v-for="(i, index) in dynamicYwyyForm.ywyy"
@@ -464,19 +357,14 @@
                   <el-input v-model="scope.row.jfzrztdw" placeholder="请输入责任主体单位"></el-input>
                 </template>
               </el-table-column>
-              <el-table-column align="left" header-align="center" label="*门禁" width="300px">
+              <el-table-column align="left" header-align="center" label="*门禁" width="200px">
                 <template slot-scope="scope">
                   <el-radio-group v-model="scope.row.mj">
                     <el-row>
                       <el-col :span="8">
                         <el-radio label="1">国密电子</el-radio>
-                      </el-col>
-                      <el-col :span="8">
-                        <el-radio label="2">普通电子</el-radio>
-                      </el-col>
-                      <el-col :span="6">
-                        <el-radio label="3">非电子</el-radio>
-                        <el-radio label="4">无</el-radio>
+                        <el-radio label="2">非国密电子（缓解）</el-radio>
+                        <el-radio label="3">非国密电子（改造）</el-radio>
                       </el-col>
                     </el-row>
                   </el-radio-group>
@@ -497,7 +385,7 @@
                 </template>
               </el-table-column>
               
-              <el-table-column align="left" header-align="center" label="*视频监控" width="120px">
+              <el-table-column align="left" header-align="center" label="*视频监控" width="200px">
                 <template slot-scope="scope">
                   <el-radio-group v-model="scope.row.spjk">
                     <div>
@@ -505,11 +393,11 @@
                     </div>
                     <br>
                     <div>
-                      <el-radio label="2">普通</el-radio>
+                      <el-radio label="2">非国密（缓解）</el-radio>
                     </div>
                     <br>
                     <div>
-                      <el-radio label="3">无</el-radio>
+                      <el-radio label="3">非国密（改造）</el-radio>
                     </div>
                     <br>
                   </el-radio-group>
@@ -1187,6 +1075,7 @@ export default {
 
       sys_xtjs: this.$route.params.data.sys_xtjs,                 //系统建设
       sys_dbjb: this.$route.params.data.sys_dbjb,                 //等保级别
+      sys_mmzcpt: this.$route.params.data.sys_mmzcpt,                 //等保级别
       sys_mpsc: this.$route.params.data.sys_mpsc,                 //密评首次
       sys_mmzd: this.$route.params.data.sys_mmzd,                 //密码制度
       sys_ysbs: this.$route.params.data.sys_ysbs,                 //云上部署
@@ -1454,6 +1343,7 @@ export default {
           sys_xtjg: this.sys_xtjg,
           sys_xtjs: this.sys_xtjs,
           sys_dbjb: this.sys_dbjb,
+          sys_mmzcpt: this.sys_mmzcpt,
           sys_mpsc: this.sys_mpsc,
           sys_mmzd: this.sys_mmzd,
           sys_ysbs: this.sys_ysbs,
@@ -1732,6 +1622,7 @@ export default {
           sys_xtjg: this.sys_xtjg,                                  //系统架构
           sys_xtjs: this.sys_xtjs,                                  //系统建设
           sys_dbjb: this.sys_dbjb,                                  //等保级别
+          sys_mmzcpt: this.sys_mmzcpt,                              //密码支撑平台
           sys_mpsc: this.sys_mpsc,                                  //密评首次
           sys_mmzd: this.sys_mmzd,                                  //密码制度
           sys_ysbs: this.sys_ysbs,                                  //云上部署
@@ -1787,6 +1678,7 @@ export default {
           sys_xtjg: this.sys_xtjg,
           sys_xtjs: this.sys_xtjs,
           sys_dbjb: this.sys_dbjb,
+          sys_mmzcpt: this.sys_mmzcpt,
           sys_mpsc: this.sys_mpsc,
           sys_mmzd: this.sys_mmzd,
           sys_ysbs: this.sys_ysbs,
